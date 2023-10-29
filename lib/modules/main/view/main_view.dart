@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:match/modules/donate/view/donate_view.dart';
+
 import 'package:match/modules/event/view/event_view.dart';
 import 'package:match/modules/home/view/home_view.dart';
 import 'package:match/modules/mypage/view/mypage_view.dart';
@@ -22,7 +22,6 @@ class MainScren extends GetView<MainController> {
       () => Scaffold(
         body: [
           HomeScreen(),
-          DonateScreen(),
           EventScreen(),
           MypageScreen(),
         ][controller.selectIdx.value],
@@ -40,7 +39,6 @@ class MainScren extends GetView<MainController> {
               AppTextStyles.body3Bold12.copyWith(color: AppColors.grey3),
           items: [
             bottomNaviItem(iconUrl: 'home', naviText: '홈'),
-            bottomNaviItem(iconUrl: 'donate', naviText: '후원'),
             bottomNaviItem(iconUrl: 'event', naviText: '이벤트'),
             bottomNaviItem(iconUrl: 'mypage', naviText: 'MY'),
           ],

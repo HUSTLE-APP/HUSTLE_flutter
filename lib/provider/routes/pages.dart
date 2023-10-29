@@ -107,14 +107,6 @@ class Pages {
       curve: Curves.easeIn,
       popGesture: false,
     ),
-    GetPage(
-      title: "후원 화면",
-      name: Routes.donate,
-      page: () => const DonateScreen(),
-      transition: Transition.noTransition,
-      binding: DonateBinding(),
-      curve: Curves.easeIn,
-      popGesture: false,
-    ),
+
   ];
 }
