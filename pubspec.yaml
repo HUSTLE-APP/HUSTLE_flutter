@@ -43,7 +43,11 @@ flutter:
     - asset/image/icon/bottomNavi/
     - asset/image/icon/login/
     - asset/image/icon/
-    - asset/image/logo/
+    - asset/image/logo/iv_home_logo_hustle.png
+    - asset/image/logo/iv_home_logo.png
+    - asset/image/iv_test_banner.png
+    - asset/image/iv_test_contest.jpeg
+    - asset/image/logo/iv_top_logo_hustle.png
 
   fonts:
     - family: AppleSDGothicNeo

@@ -72,16 +72,10 @@ Widget adIndexItem({required int total, required int currentIdx}) {
 ///* 나의 매치(불타는 매치) section
 class MyMatchItem extends StatelessWidget {
   final String title;
-  final int count;
-  final List<String> imgList;
-  final String backgroundImg;
   final Future<void> Function() destination;
   const MyMatchItem(
       {super.key,
       required this.title,
-      required this.count,
-      required this.imgList,
-      this.backgroundImg = tmpBackgroundImg,
       required this.destination});
 
   @override
@@ -90,71 +84,39 @@ class MyMatchItem extends StatelessWidget {
       onTap: destination,
       child: Container(
         height: 180.h,
-        width: 280.w,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.5, 1],
-            colors: [
-              Color(0x00000099),
-              Color(0x0000001A),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(10.r),
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(backgroundImg),
-              colorFilter: ColorFilter.mode(
-                  //TODO: gradient 적용 detail 수정
-                  Colors.black.withOpacity(0.3),
-                  BlendMode.srcATop)),
-        ),
-        child: Stack(
+        width: 150.w,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Positioned(
-                top: 14.h,
-                right: 17.w,
-                child: GestureDetector(
-                    onTap: () {
-                      //TODO: share 기능 구현/ 저장,복사,공유하기 버튼
-                    },
-                    child: SvgPicture.asset(iconDir + "ic_share_16.svg"))),
-            Positioned(
-              bottom: 23.h,
-              left: 23.w,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTextStyles.body1Regular15.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                    Wrap(
-                      spacing: -4,
-                      children:
-                          imgList.map((e) => profileItem(size: 16)).toList(),
-                    ),
-                    SizedBox(
-                      width: 7.w,
-                    ),
-                    Text(
-                      "${count}명 후원중",
-                      style: AppTextStyles.body3Bold12.copyWith(
-                        color: AppColors.white,
-                      ),
-                    )
-                  ]),
-                ],
+            Container(
+              height: 150.h, // Adjust the height for your image
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.5, 1],
+                  colors: [
+                    Color(0x00000099),
+                    Color(0x0000001A),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(10.r),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('asset/image/iv_test_contest.jpeg'),
+                ),
               ),
-            )
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5.h),
+              child: Text(
+                title,
+                style: AppTextStyles.body2Regular13.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.black,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -162,6 +124,29 @@ class MyMatchItem extends StatelessWidget {
   }
 }
 
+// child: Stack(
+// alignment: Alignment.center,
+// children: [
+// Positioned(
+// bottom: -5.h,
+// child: Column(
+// crossAxisAlignment: CrossAxisAlignment.start,
+// children: [
+// Text(
+// title,
+// style: AppTextStyles.body2Regular13.copyWith(
+// fontWeight: FontWeight.bold,
+// color: AppColors.white,
+// ),
+// ),
+// SizedBox(
+// height: 10.h,
+// ),
+// ],
+// ),
+// )
+// ],
+// ),
 ///*오늘의 매치 section
 class TodayMatchItem extends StatelessWidget {
   final String title;
