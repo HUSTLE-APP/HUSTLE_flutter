@@ -31,7 +31,7 @@ class HomeScreen extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset(
-                      imgDir + "logo/iv_home_logo.png",
+                      imgDir + "logo/iv_hustleHome_logo.png",
                       width: 75.w,
                     ),
                     SvgPicture.asset(iconDir + "ic_alarm_20.svg")
@@ -196,7 +196,9 @@ class HomeScreen extends GetView<HomeController> {
                 CommonSectionHeader(
                     title: '박레이님께 꼭 맞는 기부처 추천',
                     //TODO : destination 임시 처리
-                    destination: () async {}),
+                    destination: () async {
+                      Get.toNamed(Routes.main_match);
+                    }),
                 SizedBox(
                   height: 99.h,
                   child: ListView.separated(

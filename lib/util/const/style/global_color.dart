@@ -24,4 +24,5 @@ class AppColors {
   static const Color kakaoBtn = Color(0xFFFBD821);
   static const Color naverBtn = Color(0xFF03C75A);
   static const Color appleBtn = Color(0xFF000000);
+  static const Color mainColor = Color(0xFF0066FF);
 }
