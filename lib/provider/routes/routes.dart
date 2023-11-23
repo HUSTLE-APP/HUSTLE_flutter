@@ -1,5 +1,7 @@
 abstract class _Paths {
   _Paths._();
+  /// 스플래시 화면
+  static const match = "/match";
 
   /// 스플래시 화면
   static const splash = "/splash";
@@ -34,6 +36,8 @@ abstract class _Paths {
 
 abstract class Routes {
   Routes._();
+  /// 경기 화면
+  static const match = _Paths.match;
 
   /// 스플래시 화면
   static const splash = _Paths.splash;

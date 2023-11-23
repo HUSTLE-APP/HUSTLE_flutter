@@ -5,6 +5,7 @@ import 'package:match/modules/buring_match/view/burning_match_pay_view.dart';
 import 'package:match/modules/buring_match/view/burning_match_view.dart';
 import 'package:match/modules/donate/binding/donate_binding.dart';
 import 'package:match/modules/donate/view/donate_view.dart';
+import 'package:match/modules/match/view/match_view.dart';
 import 'package:match/modules/mypage/binding/mypage_binding.dart';
 import 'package:match/modules/mypage/view/mypage_view.dart';
 import 'package:match/modules/onboarding/binding/onboarding_binding.dart';
@@ -24,6 +25,15 @@ import 'routes.dart';
 
 class Pages {
   static final routes = [
+    GetPage(
+      title: "경기 화면",
+      name: Routes.match,
+      page: () => const MatchScreen(),
+      transition: Transition.noTransition,
+      // binding: MatchBiding(),
+      curve: Curves.easeIn,
+      popGesture: false,
+    ),
     GetPage(
       title: "온보딩 화면",
       name: Routes.onboarding,
