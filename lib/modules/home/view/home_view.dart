@@ -95,7 +95,7 @@ class HomeScreen extends GetView<HomeController> {
                     itemBuilder: (context, index) {
                       return MyMatchItem(
                           destination: () async {
-                            Get.toNamed(Routes.home + Routes.burning_match);
+                            Get.toNamed(Routes.main_match);
                           },
                           title: "가톨릭대학교 총장배");
                     },
