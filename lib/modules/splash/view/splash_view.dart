@@ -23,7 +23,7 @@ class SplashScreen extends GetView<SplashController> {
           //라우팅 설정
           child: GestureDetector(
         onTap: () {
-          Get.toNamed(Routes.onboarding); //Get.toNamed(Routes.main);
+          Get.toNamed(Routes.login); //Get.toNamed(Routes.main);
         },
         child: SizedBox(
           child: Image.asset(

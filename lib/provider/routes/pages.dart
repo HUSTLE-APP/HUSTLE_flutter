@@ -10,8 +10,6 @@ import 'package:match/modules/friendlyMatch/calendar/calendar_1.dart';
 import 'package:match/modules/friendlyMatch/main_match.dart';
 import 'package:match/modules/mypage/binding/mypage_binding.dart';
 import 'package:match/modules/mypage/view/mypage_view.dart';
-import 'package:match/modules/onboarding/binding/onboarding_binding.dart';
-import 'package:match/modules/onboarding/view/onboarding_view.dart';
 import 'package:match/modules/splash/binding/splash_binding.dart';
 import 'package:match/modules/splash/view/splash_view.dart';
 import 'package:match/modules/login/binding/login_binding.dart';
@@ -30,15 +28,6 @@ import 'routes.dart';
 
 class Pages {
   static final routes = [
-    GetPage(
-      title: "온보딩 화면",
-      name: Routes.onboarding,
-      page: () => const OnboardingScreen(),
-      transition: Transition.noTransition,
-      binding: OnboardingBiding(),
-      curve: Curves.easeIn,
-      popGesture: false,
-    ),
     GetPage(
       title: "스플래시 화면",
       name: Routes.splash,
