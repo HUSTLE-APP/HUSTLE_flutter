@@ -78,15 +78,29 @@ class BasketballCardWidget extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          Image.asset(
-            'asset/image/iv_test_contest.jpeg',
-            width: 300.w,
-            height: 200.h,
-            fit: BoxFit.cover,
+          // Image.asset(
+          //   'asset/image/iv_test_contest.jpeg',
+          //   width: 300.w,
+          //   height: 200.h,
+          //   fit: BoxFit.cover,
+          // ),
+          Container(
+            width: 315.w,
+            height: 161.h,
+            decoration: ShapeDecoration(
+              gradient: LinearGradient(
+                begin: Alignment(0.78, -0.62),
+                end: Alignment(-0.78, 0.62),
+                colors: [Color(0xFF8AB4F4), Color(0xFF4D8DED)],
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
           ),
-          Text(tournamentName),
+          SizedBox(height: 12.h),
           // 여기에 새로운 Container 추가
-          CustomComponent(),
+          for (var i = 0; i < 3; i++) CustomComponent(),
           // ElevatedButton(
           //   onPressed: () {
           //     // 신청하기 버튼 로직
