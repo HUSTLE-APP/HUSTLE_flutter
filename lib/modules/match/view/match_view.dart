@@ -59,11 +59,12 @@ class MatchScreen extends GetView<MatchController> {
           ],
           // 다른 AppBar 설정들...
           bottom: PreferredSize(
-            preferredSize: Size(360.w, 60.h),
+            preferredSize: Size.fromHeight(60.h), // 여기서 높이만 지정
             child: Container( // TabBar 배경 스타일 적용
+              width: MediaQuery.of(context).size.width, // 화면의 너비에 맞춤
               color: Color(0xFFFFF6F3), // 탭바의 배경색
               child: TabBar(
-                isScrollable: true, // 탭이 여러 개일 경우 스크롤 가능
+                isScrollable: false, // 탭이 여러 개일 경우 스크롤 가능
                 indicatorSize: TabBarIndicatorSize.tab, // 인디케이터 크기를 탭에 맞춤
                 indicator: BoxDecoration(
                   gradient: LinearGradient(
