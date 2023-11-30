@@ -26,7 +26,7 @@ class LoginScreen extends GetView<LoginController> {
         // Center the Column
         child: Column(
           mainAxisAlignment:
-              MainAxisAlignment.center, // Center the children vertically
+          MainAxisAlignment.center, // Center the children vertically
           children: [
             SizedBox(
               height: 150.h,
@@ -50,9 +50,9 @@ class LoginScreen extends GetView<LoginController> {
 
   @override
   kakaoLogin() {
-    // final _loginController = Get.find<LoginController>();
+    final _loginController = Get.find<LoginController>();
     return GestureDetector(
-      onTap: () {
+      onTap: () async{
         // bool isLogined = await _loginController.login();
         // if (isLogined) {
         //   User? user = await UserApi.instance.me();
@@ -60,6 +60,7 @@ class LoginScreen extends GetView<LoginController> {
         // } else {
         //   Get.offNamed(Routes.login);
         // }
+        await controller.login();
         Get.toNamed(Routes.main);
       },
       child: Container(

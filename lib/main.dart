@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:match/modules/home/view/home_view.dart';
 import 'package:match/modules/splash/binding/splash_binding.dart';
 import 'package:match/provider/routes/routes.dart';
@@ -15,6 +16,7 @@ import 'util/const/style/global_color.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
+  KakaoSdk.init(nativeAppKey: 'eb293a1e5f1edb2e57c2443cea0cb779');
   runApp(const MyApp());
 }
 

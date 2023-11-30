@@ -4,34 +4,24 @@ import 'dart:async';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginController extends GetxController {
-  @override
-  void onInit() {
-    super.onInit();
+
+  Future<void> login() async {
+    try {
+      if (await isKakaoTalkInstalled()) {
+        await UserApi.instance.loginWithKakaoTalk();
+        print('카카오톡으로 로그인 성공');
+      } else {
+        await UserApi.instance.loginWithKakaoAccount();
+        print('카카오계정으로 로그인 성공');
+      }
+    } catch (error) {
+      print('카카오 로그인 실패 $error');
+
+    }
+
+
   }
 
-  @override
-  Future<bool> login() async {
-    try {
-      bool isInstalled = await isKakaoTalkInstalled();
-      if (isInstalled) {
-        try {
-          await UserApi.instance.loginWithKakaoTalk();
-          return true;
-        } catch (e) {
-          return false;
-        }
-      } else {
-        try {
-          await UserApi.instance.loginWithKakaoAccount();
-          return true;
-        } catch (e) {
-          return false;
-        }
-      }
-    } catch (e) {
-      return false;
-    }
-  }
 
   @override
   Future<bool> logout() async {
