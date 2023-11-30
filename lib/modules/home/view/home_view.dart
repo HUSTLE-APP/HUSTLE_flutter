@@ -15,16 +15,6 @@ import '../widget/home_widget.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({super.key});
-  //
-  // static const List<String> _destinations = [
-  //   Routes.home,
-  //   Routes.home,
-  //   Routes.main_match,
-  //   Routes.home,
-  //   Routes.home,
-  // ];
-  //
-  // static int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
