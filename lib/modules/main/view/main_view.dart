@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:match/modules/event/view/ManagerPage.dart';
+import 'package:match/modules/event/view/TeamList.dart';
 
 import 'package:match/modules/event/view/event_view.dart';
 import 'package:match/modules/home/view/home_view.dart';
@@ -24,8 +26,8 @@ class MainScren extends GetView<MainController> {
           HomeScreen(),
           HomeScreen(),
           MainMatchScreen(),
-          EventScreen(),
-          MypageScreen(),
+          TeamList(),
+          ManagerPage(),
         ][controller.selectIdx.value],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
