@@ -13,6 +13,7 @@ import 'package:match/util/const/style/global_text_styles.dart';
 import '../../../provider/routes/routes.dart';
 import '../../../util/const/style/global_color.dart';
 import '../../friendlyMatch/main_match.dart';
+import '../../match/view/match_view.dart';
 import '../controller/main_controller.dart';
 
 class MainScren extends GetView<MainController> {
@@ -24,7 +25,7 @@ class MainScren extends GetView<MainController> {
       () => Scaffold(
         body: [
           HomeScreen(),
-          HomeScreen(),
+          MatchScreen(),
           MainMatchScreen(),
           TeamList(),
           ManagerPage(),
