@@ -2,15 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
 
 import 'package:match/util/const/global_variable.dart';
-import 'package:match/util/const/style/global_text_styles.dart';
 import '../../../util/const/style/global_color.dart';
 import '../../../provider/routes/routes.dart';
 import '../controller/login_controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
-  const LoginScreen({super.key});
+  // const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
+
+  // Future logout() async {
+  //   await _loginController.logout();
+  //   isLogined = false;
+  //   user = null;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +26,13 @@ class LoginScreen extends GetView<LoginController> {
         // Center the Column
         child: Column(
           mainAxisAlignment:
-              MainAxisAlignment.center, // Center the children vertically
+          MainAxisAlignment.center, // Center the children vertically
           children: [
             SizedBox(
               height: 150.h,
             ),
             Image.asset(
-              imgDir + "logo/iv_home_logo.png",
+              imgDir + "logo/iv_hustle_logo.png", // 허슬로고로 변경
               width: 120.w,
             ),
             SizedBox(
@@ -35,15 +42,6 @@ class LoginScreen extends GetView<LoginController> {
             SizedBox(
               height: 12.h,
             ),
-            naverLogin(),
-            SizedBox(
-              height: 12.h,
-            ),
-            appleLogin(),
-            SizedBox(
-              height: 30.h,
-            ),
-            mailLogin(),
           ],
         ),
       ),
@@ -52,9 +50,18 @@ class LoginScreen extends GetView<LoginController> {
 
   @override
   kakaoLogin() {
+    final _loginController = Get.find<LoginController>();
     return GestureDetector(
-      onTap: () {
-        Get.toNamed(Routes.home);
+      onTap: () async{
+        // bool isLogined = await _loginController.login();
+        // if (isLogined) {
+        //   User? user = await UserApi.instance.me();
+        //   Get.offNamed(Routes.home);
+        // } else {
+        //   Get.offNamed(Routes.login);
+        // }
+        await controller.login();
+        Get.toNamed(Routes.main);
       },
       child: Container(
         width: 300.w,
@@ -85,121 +92,7 @@ class LoginScreen extends GetView<LoginController> {
       ),
     );
   }
-
-  @override
-  naverLogin() {
-    return GestureDetector(
-      onTap: () {
-        Get.toNamed(Routes.main);
-      },
-      child: Container(
-        width: 300.w,
-        height: 46.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0), // Set border radius to 10px
-          color: AppColors.naverBtn, // Button's background color
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(width: 24.w), // Add some spacing between the icon and text
-            SvgPicture.asset(
-                iconDir + "login/ic_naver_16.svg"), // Include your SVG here
-            SizedBox(width: 80.w), // Add some spacing between the icon and text
-            Text(
-              '네이버 로그인',
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'Apple SD Gothic Neo',
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  @override
-  appleLogin() {
-    return GestureDetector(
-      onTap: () {
-        Get.toNamed(Routes.home);
-      },
-      child: Container(
-        width: 300.w,
-        height: 46.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0), // Set border radius to 10px
-          color: AppColors.appleBtn, // Button's background color
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(width: 24.w), // Add some spacing between the icon and text
-            SvgPicture.asset(
-                iconDir + "login/ic_apple_20.svg"), // Include your SVG here
-            SizedBox(width: 80.w), // Add some spacing between the icon and text
-            Text(
-              '애플 로그인',
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'Apple SD Gothic Neo',
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  @override
-  mailLogin() {
-    return GestureDetector(
-      onTap: () {
-        Get.toNamed(Routes.home);
-      },
-      child: Container(
-        width: 300.w,
-        height: 18.h,
-        child: Center(
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '이미 계정이 있나요? ',
-                  style: TextStyle(
-                    color: AppColors.grey4,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Apple SD Gothic Neo',
-                  ),
-                ),
-                TextSpan(
-                  text: '이메일 로그인',
-                  style: TextStyle(
-                    color: AppColors.black,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'Apple SD Gothic Neo',
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }
-
-
 /*child: GestureDetector(
 onTap: () {
 Get.toNamed(Routes.home);

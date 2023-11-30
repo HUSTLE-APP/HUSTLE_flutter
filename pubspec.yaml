@@ -25,6 +25,10 @@ dependencies:
   freezed: ^2.4.2
   carousel_slider: ^4.2.1
   json_annotation: ^4.8.1
+  kakao_flutter_sdk : ^1.6.1
+  table_calendar: ^3.0.9
+  image_picker: ^1.0.4
+
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -50,6 +54,8 @@ flutter:
     - asset/image/logo/iv_top_logo_hustle.png
     - asset/image/icon/plus.svg
     - asset/image/icon/basketball.svg
+    - asset/image/logo/iv_hustle_logo.png
+    - asset/image/logo/iv_hustleHome_logo.png
 
   fonts:
     - family: AppleSDGothicNeo

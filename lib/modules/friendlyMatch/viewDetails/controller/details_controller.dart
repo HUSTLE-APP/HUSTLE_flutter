@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
+import 'dart:async';
 
-class OnboardingController extends GetxController {
+class DetailsController extends GetxController {
   @override
   void onInit() {
     super.onInit();

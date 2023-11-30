@@ -37,9 +37,22 @@ abstract class _Paths {
   /// 마이페이지 화면
   static const mypage = "/mypage";
 
+
   /// 대회생성 화면
   static const create = "/create";
-}
+
+  // 교류전 메인화면
+  static const main_match = "/main_match";
+
+  // 게시판 화면
+  static const board = "/board";
+
+  // 캘린더 화면
+  static const calendar1 = "/calendar1";
+
+  // 상세보기 화면
+  static const view_detail = "/detail";
+
 
 abstract class Routes {
   Routes._();
@@ -79,6 +92,20 @@ abstract class Routes {
   /// 마이페이지 화면
   static const mypage = _Paths.mypage;
 
+
   /// 대회생성 화면
   static const create = _Paths.create;
+
+  // 교류전 메인화면
+  static const main_match = _Paths.main_match;
+
+  // 게시판 화면
+  static const board = _Paths.board;
+
+  //
+  static const calendar1 = _Paths.calendar1;
+
+  // 상세보기 화면
+  static const view_detail = _Paths.view_detail;
+
 }

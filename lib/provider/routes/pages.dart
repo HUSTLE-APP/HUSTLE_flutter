@@ -5,11 +5,15 @@ import 'package:match/modules/buring_match/view/burning_match_pay_view.dart';
 import 'package:match/modules/buring_match/view/burning_match_view.dart';
 import 'package:match/modules/donate/binding/donate_binding.dart';
 import 'package:match/modules/donate/view/donate_view.dart';
+
 import 'package:match/modules/match/view/match_view.dart';
+
+import 'package:match/modules/friendlyMatch/board/board.dart';
+import 'package:match/modules/friendlyMatch/calendar/calendar_1.dart';
+import 'package:match/modules/friendlyMatch/main_match.dart';
+
 import 'package:match/modules/mypage/binding/mypage_binding.dart';
 import 'package:match/modules/mypage/view/mypage_view.dart';
-import 'package:match/modules/onboarding/binding/onboarding_binding.dart';
-import 'package:match/modules/onboarding/view/onboarding_view.dart';
 import 'package:match/modules/splash/binding/splash_binding.dart';
 import 'package:match/modules/splash/view/splash_view.dart';
 import 'package:match/modules/login/binding/login_binding.dart';
@@ -24,11 +28,15 @@ import '../../modules/home/binding/home_binding.dart';
 import '../../modules/home/view/home_view.dart';
 import '../../modules/main/binding/main_binding.dart';
 import '../../modules/main/view/main_view.dart';
+import '../../modules/friendlyMatch/calendar/calendar.dart';
+import '../../modules/friendlyMatch/viewDetails/veiw_details.dart';
+import '../../modules/friendlyMatch/main_match.dart';
 import 'routes.dart';
 
 class Pages {
   static final routes = [
     GetPage(
+
       title: "경기 화면",
       name: Routes.match,
       page: () => const MatchScreen(),
@@ -47,6 +55,7 @@ class Pages {
       popGesture: false,
     ),
     GetPage(
+
       title: "스플래시 화면",
       name: Routes.splash,
       page: () => const SplashScreen(),
@@ -130,6 +139,7 @@ class Pages {
       popGesture: false,
     ),
     GetPage(
+
       title: "대회생성 화면",
       name: Routes.create,
       page: () => CreateTournamentScreen (),
@@ -139,5 +149,26 @@ class Pages {
       popGesture: false,
     ),
 
+
+        title: "교류전메인",
+        name: Routes.main_match,
+        page: () => MainMatchScreen(),
+        transition: Transition.noTransition,
+        curve: Curves.easeIn,
+        popGesture: false),
+    GetPage(
+        title: "캘린더 화면",
+        name: Routes.calendar1,
+        page: () => CalendarScreen1(),
+        transition: Transition.noTransition,
+        curve: Curves.easeIn,
+        popGesture: false),
+    GetPage(
+        title: "게시판 화면",
+        name: Routes.board,
+        page: () => BoardScreen(),
+        transition: Transition.noTransition,
+        curve: Curves.easeIn,
+        popGesture: false)
   ];
 }
