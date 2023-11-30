@@ -22,7 +22,7 @@ import '../../modules/home/view/home_view.dart';
 import '../../modules/main/binding/main_binding.dart';
 import '../../modules/main/view/main_view.dart';
 import '../../modules/friendlyMatch/calendar/calendar.dart';
-import '../../modules/viewDetails/veiw_details.dart';
+import '../../modules/friendlyMatch/viewDetails/veiw_details.dart';
 import '../../modules/friendlyMatch/main_match.dart';
 import 'routes.dart';
 
