@@ -17,6 +17,8 @@ import 'package:match/modules/login/view/login_view.dart';
 
 import '../../modules/event/binding/event_binding.dart';
 import '../../modules/event/view/event_view.dart';
+import '../../modules/event_detail/binding/event_detail_binding.dart';
+import '../../modules/event_detail/view/event_detail_view.dart';
 import '../../modules/home/binding/home_binding.dart';
 import '../../modules/home/view/home_view.dart';
 import '../../modules/main/binding/main_binding.dart';
@@ -105,6 +107,15 @@ class Pages {
       page: () => const EventScreen(),
       transition: Transition.noTransition,
       binding: EventBinding(),
+      curve: Curves.easeIn,
+      popGesture: false,
+    ),
+    GetPage(
+      title: "이벤트 상세화면",
+      name: Routes.event_detail,
+      page: () => const EventDetailScreen(),
+      transition: Transition.noTransition,
+      binding: EventDetailBinding(),
       curve: Curves.easeIn,
       popGesture: false,
     ),

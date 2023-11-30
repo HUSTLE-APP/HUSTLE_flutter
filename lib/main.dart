@@ -45,8 +45,8 @@ class MyApp extends StatelessWidget {
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate
             ],
-            initialRoute: "/match",
-            initialBinding: MatchBinding(),
+            initialRoute: "/event",
+            initialBinding: EventBinding(),
             smartManagement: SmartManagement.full,
             navigatorKey: Get.key,
           );

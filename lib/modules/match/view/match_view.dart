@@ -4,27 +4,21 @@ import 'package:get/get.dart';
 
 import '../controller/match_controller.dart';
 import '../widget/custom_component.dart';
+import '../widget/filter.dart';
 
 class MatchScreen extends GetView<MatchController> {
   const MatchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-          () => Scaffold(
+    return Scaffold(
         body: Column(
           children: [
             Expanded(
               child: PageView.builder(
                 itemCount: 3, // 농구 대회 카드 수
                 itemBuilder: (context, index) {
-                  return BasketballCardWidget(
-                    posterUrl: '농구 대회 포스터 URL',
-                    tournamentName: '대회 이름 $index',
-                    registrationPeriod: '2023년 1월 1일 - 2023년 1월 31일',
-                    participantCount: '참여 인원: ${100 + index}',
-                    location: '참여 장소: 체육관 $index',
-                  );
+                  return BasketballCardWidget();
                 },
               ),
             ),
@@ -52,26 +46,12 @@ class MatchScreen extends GetView<MatchController> {
         //     ),
         //   ],
         // ),
-      ),
     );
   }
 }
 
 class BasketballCardWidget extends StatelessWidget {
-  final String posterUrl;
-  final String tournamentName;
-  final String registrationPeriod;
-  final String participantCount;
-  final String location;
-
-  const BasketballCardWidget({
-    Key? key,
-    required this.posterUrl,
-    required this.tournamentName,
-    required this.registrationPeriod,
-    required this.participantCount,
-    required this.location,
-  }) : super(key: key);
+  const BasketballCardWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -84,22 +64,23 @@ class BasketballCardWidget extends StatelessWidget {
           //   height: 200.h,
           //   fit: BoxFit.cover,
           // ),
-          Container(
-            width: 315.w,
-            height: 161.h,
-            decoration: ShapeDecoration(
-              gradient: LinearGradient(
-                begin: Alignment(0.78, -0.62),
-                end: Alignment(-0.78, 0.62),
-                colors: [Color(0xFF8AB4F4), Color(0xFF4D8DED)],
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            ),
-          ),
-          SizedBox(height: 12.h),
+          // Container(
+          //   width: 315.w,
+          //   height: 161.h,
+          //   decoration: ShapeDecoration(
+          //     gradient: LinearGradient(
+          //       begin: Alignment(0.78, -0.62),
+          //       end: Alignment(-0.78, 0.62),
+          //       colors: [Color(0xFF8AB4F4), Color(0xFF4D8DED)],
+          //     ),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(16),
+          //     ),
+          //   ),
+          // ),
           // 여기에 새로운 Container 추가
+          // Filter(),
+          SizedBox(height: 12.h),
           for (var i = 0; i < 3; i++) CustomComponent(),
           // ElevatedButton(
           //   onPressed: () {

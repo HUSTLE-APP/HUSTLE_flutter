@@ -1,6 +1,10 @@
 abstract class _Paths {
   _Paths._();
-  /// 스플래시 화면
+
+  //이벤트 상세
+  static const event_detail = '/eventDetail';
+
+  /// 경기 화면
   static const match = "/match";
 
   /// 스플래시 화면
@@ -65,6 +69,9 @@ abstract class Routes {
 
   /// 이벤트 화면
   static const event = _Paths.event;
+
+  /// 이벤트 상세 화면
+  static const event_detail = _Paths.event_detail;
 
   /// 마이페이지 화면
   static const mypage = _Paths.mypage;
