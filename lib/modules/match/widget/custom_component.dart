@@ -46,7 +46,7 @@ class CustomComponent extends StatelessWidget {
                 ),
                 SizedBox(width: 8.w),
                 Text(
-                'Match Name',
+                '가톨릭대학교 총장배 대회',
                 style: AppTextStyles.body2Regular13,
               ),
 
@@ -131,7 +131,7 @@ class CustomComponent extends StatelessWidget {
                                       left: 0,
                                       top: 3,
                                       child: Text(
-                                        'Participant',
+                                        '바스타즈',
                                         style: TextStyle(
                                           color: Color(0xFF9F9F9F),
                                           fontSize: 10,
@@ -187,7 +187,7 @@ class CustomComponent extends StatelessWidget {
                                       left: 0,
                                       top: 3,
                                       child: Text(
-                                        'Participant',
+                                        '버스타죠',
                                         style: TextStyle(
                                           color: Color(0xFF9F9F9F),
                                           fontSize: 10,
@@ -220,7 +220,7 @@ class CustomComponent extends StatelessWidget {
                               left: 0,
                               top: 0,
                               child: Text(
-                                'Team Name  vs Team Name',
+                                '바스타즈  vs 버스타죠',
                                 style: TextStyle(
                                   color: Color(0xFF181829),
                                   fontSize: 12,

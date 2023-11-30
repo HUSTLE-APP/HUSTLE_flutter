@@ -36,6 +36,9 @@ abstract class _Paths {
 
   /// 마이페이지 화면
   static const mypage = "/mypage";
+
+  /// 대회생성 화면
+  static const create = "/create";
 }
 
 abstract class Routes {
@@ -75,4 +78,7 @@ abstract class Routes {
 
   /// 마이페이지 화면
   static const mypage = _Paths.mypage;
+
+  /// 대회생성 화면
+  static const create = _Paths.create;
 }

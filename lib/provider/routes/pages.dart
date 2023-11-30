@@ -15,6 +15,7 @@ import 'package:match/modules/splash/view/splash_view.dart';
 import 'package:match/modules/login/binding/login_binding.dart';
 import 'package:match/modules/login/view/login_view.dart';
 
+import '../../modules/create/view/create_view.dart';
 import '../../modules/event/binding/event_binding.dart';
 import '../../modules/event/view/event_view.dart';
 import '../../modules/event_detail/binding/event_detail_binding.dart';
@@ -123,6 +124,15 @@ class Pages {
       title: "마이페이지 화면",
       name: Routes.mypage,
       page: () => const MypageScreen(),
+      transition: Transition.noTransition,
+      binding: MypageBinding(),
+      curve: Curves.easeIn,
+      popGesture: false,
+    ),
+    GetPage(
+      title: "대회생성 화면",
+      name: Routes.create,
+      page: () => CreateTournamentScreen (),
       transition: Transition.noTransition,
       binding: MypageBinding(),
       curve: Curves.easeIn,

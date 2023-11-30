@@ -87,6 +87,12 @@ class AppTextStyles {
       fontSize: 12.sp,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.08);
+  static var   T1Bold13 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
   static var T1Bold14 = TextStyle(
       color: _defaultTextColor,
       fontFamily: _defaultFontFamily,

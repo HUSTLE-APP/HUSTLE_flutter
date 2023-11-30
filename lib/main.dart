@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:match/modules/splash/binding/splash_binding.dart';
 
+import 'modules/create/binding/create_binding.dart';
 import 'modules/event/binding/event_binding.dart';
 import 'modules/match/binding/match_binding.dart';
 import 'provider/routes/pages.dart';
@@ -46,8 +47,8 @@ class MyApp extends StatelessWidget {
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate
             ],
-            initialRoute: "/event",
-            initialBinding: EventBinding(),
+            initialRoute: "/match",
+            initialBinding: MatchBinding(),
             smartManagement: SmartManagement.full,
             navigatorKey: Get.key,
           );

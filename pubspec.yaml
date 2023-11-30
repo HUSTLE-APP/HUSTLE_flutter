@@ -48,6 +48,7 @@ flutter:
     - asset/image/iv_test_banner.png
     - asset/image/iv_test_contest.jpeg
     - asset/image/logo/iv_top_logo_hustle.png
+    - asset/image/icon/plus.svg
 
   fonts:
     - family: AppleSDGothicNeo
