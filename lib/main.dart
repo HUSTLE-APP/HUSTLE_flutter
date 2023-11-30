@@ -4,8 +4,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:match/modules/home/view/home_view.dart';
 import 'package:match/modules/splash/binding/splash_binding.dart';
+import 'package:match/provider/routes/routes.dart';
 
+import 'modules/friendlyMatch/main_match.dart';
 import 'provider/routes/pages.dart';
 import 'util/const/style/global_color.dart';
 
@@ -51,4 +54,53 @@ class MyApp extends StatelessWidget {
           );
         }));
   }
+}
+
+class IndexScreen extends StatefulWidget {
+  @override
+  _IndexScreenState createState() => _IndexScreenState();
+}
+
+
+class _IndexScreenState extends State<IndexScreen> {
+  int _currentIndex = 0;
+
+  final List _tabs = [
+    HomeScreen(),
+    Text('page2'),
+    MainMatchScreen(),
+    HomeScreen(),
+    HomeScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: _tabs[_currentIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        iconSize: 30,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: TextStyle(fontSize: 12),
+        onTap: _onItemTapped,
+        currentIndex: _currentIndex,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
+          BottomNavigationBarItem(icon: Icon(Icons.emoji_events), label: '대회'),
+          BottomNavigationBarItem(icon: Icon(Icons.interests), label: '교류전'),
+          BottomNavigationBarItem(icon: Icon(Icons.people_alt), label: '동아리'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: '마이페이지'),
+        ],
+      )
+    );
+  }
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
 }

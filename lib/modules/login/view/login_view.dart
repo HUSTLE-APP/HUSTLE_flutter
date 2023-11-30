@@ -60,7 +60,7 @@ class LoginScreen extends GetView<LoginController> {
         // } else {
         //   Get.offNamed(Routes.login);
         // }
-        Get.toNamed(Routes.home);
+        Get.toNamed(Routes.main);
       },
       child: Container(
         width: 300.w,
