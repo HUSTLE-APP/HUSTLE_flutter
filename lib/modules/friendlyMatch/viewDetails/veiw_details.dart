@@ -18,68 +18,32 @@ class ViewDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('교류전'),
-        titleTextStyle: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                event.title,
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 16.0),
-              Card(
-                color: AppColors.mainColor.withOpacity(0.2),
-                elevation: 4.0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      buildDetailRow(
-                          '일시',
-                          event.date != null
-                              ? DateFormat('yyyy-MM-dd').format(event.date!)
-                              : '날짜 미정'),
-                      buildDetailRow('장소', event.place ?? '장소 미정'),
-                      buildDetailRow('동아리명', event.clubName ?? '동아리 미지정'),
-                      buildDetailRow('연락처', event.phone ?? '연락처 미정'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 8.0),
-              Divider(
-                  color: Colors.grey,
-                  thickness: 2.0,
-                  indent: 20.0,
-                  endIndent: 20.0),
-              SizedBox(height: 8.0),
-              buildImageRow('위치', event.imagePath),
-              Spacer(),
-              ElevatedButton(
-                onPressed: () {
-                  Get.to(() => ApplyFormScreen());
-                },
-                child: Text('교류전 신청하기'),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.mainColor,
-                    minimumSize: Size.fromHeight(50),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
-                    textStyle:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold)),
-              )
-            ]),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              event.title,
+              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16.0),
+            buildDetailRow('일시',
+                event.date != null ? DateFormat('yyyy-MM-dd').format(
+                    event.date!) : '날짜 미정'),
+            buildDetailRow('장소', event.place ?? '장소 미정'),
+            buildDetailRow('동아리명', event.clubName ?? '동아리 미지정'),
+            buildDetailRow('연락처', event.phone ?? '연락처 미정'),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => ApplyFormScreen());
+              },
+              child: Text('교류전 신청하기'),
+            ),
+          ],
+        ),
       ),
     );
   }

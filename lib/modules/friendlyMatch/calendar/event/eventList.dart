@@ -31,6 +31,7 @@ class EventListWidget extends StatelessWidget {
               if (event.postId != null) {
                 // GetX를 사용하여 명명된 라우트로 이동
                 Get.to(() => ViewDetails(event: event));
+
               } else {
                 print('이 이벤트는 게시물 아이디가 없습니다.');
               }
