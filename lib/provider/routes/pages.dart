@@ -35,25 +35,7 @@ import 'routes.dart';
 
 class Pages {
   static final routes = [
-    GetPage(
 
-      title: "경기 화면",
-      name: Routes.match,
-      page: () => const MatchScreen(),
-      transition: Transition.noTransition,
-      // binding: MatchBiding(),
-      curve: Curves.easeIn,
-      popGesture: false,
-    ),
-    GetPage(
-      title: "온보딩 화면",
-      name: Routes.onboarding,
-      page: () => const OnboardingScreen(),
-      transition: Transition.noTransition,
-      binding: OnboardingBiding(),
-      curve: Curves.easeIn,
-      popGesture: false,
-    ),
     GetPage(
 
       title: "스플래시 화면",
