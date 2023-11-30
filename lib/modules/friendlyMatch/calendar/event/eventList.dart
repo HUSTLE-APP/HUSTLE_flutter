@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:match/modules/friendlyMatch/viewDetails/veiw_details.dart';
 import 'package:match/util/const/style/global_color.dart';
 import '../event/event.dart';
 import '../../../../provider/routes/routes.dart';
@@ -71,7 +72,8 @@ class EventListWidget extends StatelessWidget {
           final event = events[index];
           return ListTile(
             title: Text(event.title),
-            subtitle: Text(event.description),
+            subtitle: Text(
+                '${event.description}${event.place != null ? ' - 장소 : ${event.place}' : ''}'),
             onTap: () {
               if (event.postId != null) {
                 Get.toNamed('/event/${event.postId}');

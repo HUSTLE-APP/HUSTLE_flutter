@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:match/modules/friendlyMatch/calendar/controller/calendar_controller.dart';
-import 'package:match/modules/viewDetails/veiw_details.dart';
+import 'package:match/modules/friendlyMatch/viewDetails/veiw_details.dart';
 import '../../friendlyMatch/calendar/event/event.dart';
 
 class BoardScreen extends StatelessWidget {
