@@ -7,6 +7,42 @@ import '../../../../provider/routes/routes.dart';
 import '../controller/calendar_controller.dart';
 
 class EventListWidget extends StatelessWidget {
+  final CalendarController controller = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      var events = controller
+          .getEventsForDay(controller.selectedDay.value ?? DateTime.now());
+
+      // 불필요한 빌드를 방지하기 위해 Obx를 리스트뷰 바깥으로 이동
+      return ListView.builder(
+        itemCount: events.length,
+        itemBuilder: (context, index) {
+          final event = events[index];
+          // 유일한 키 제공
+          return ListTile(
+            key: ObjectKey(event),
+            title: Text(event.title),
+            subtitle: Text(
+              '${event.description}',
+            ),
+            onTap: () {
+              if (event.postId != null) {
+                // GetX를 사용하여 명명된 라우트로 이동
+                Get.to(() => ViewDetails(event: event));
+              } else {
+                print('이 이벤트는 게시물 아이디가 없습니다.');
+              }
+            },
+          );
+        },
+      );
+    });
+  }
+}
+
+
 //   final List<Event> events;
 
 //   EventListWidget({Key? key, required this.events}) : super(key: key);
@@ -56,34 +92,3 @@ class EventListWidget extends StatelessWidget {
 //   } else {
 //     print('실행중오류발생!');
 //   }
-
-  final CalendarController controller;
-
-  EventListWidget({Key? key, required this.controller}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Obx(() {
-      var events = controller
-          .getEventsForDay(controller.selectedDay.value ?? DateTime.now());
-      return ListView.builder(
-        itemCount: events.length,
-        itemBuilder: ((context, index) {
-          final event = events[index];
-          return ListTile(
-            title: Text(event.title),
-            subtitle: Text(
-                '${event.description}${event.place != null ? ' - 장소 : ${event.place}' : ''}'),
-            onTap: () {
-              if (event.postId != null) {
-                Get.toNamed('/event/${event.postId}');
-              } else {
-                print('이 이벤트는 게시물 아이디가 없습니다.');
-              }
-            },
-          );
-        }),
-      );
-    });
-  }
-}

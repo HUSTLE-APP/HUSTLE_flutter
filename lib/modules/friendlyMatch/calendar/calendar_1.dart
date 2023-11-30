@@ -5,21 +5,21 @@ import 'package:table_calendar/table_calendar.dart';
 import '../calendar/event/event.dart';
 
 class CalendarScreen1 extends StatelessWidget {
-  final CalendarController calendarController = Get.put(CalendarController());
+  final CalendarController calendarController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 30),
-      child: GetBuilder<CalendarController>(
-        builder: (controller) {
-          return TableCalendar<Event>(
-            focusedDay: controller.focusedDay.value,
+    return Obx(
+      () {
+        return Container(
+          padding: EdgeInsets.only(top: 30),
+          child: TableCalendar<Event>(
+            focusedDay: calendarController.focusedDay.value,
             firstDay: DateTime.utc(2023, 11, 30),
             lastDay: DateTime.utc(2024, 01, 01),
             selectedDayPredicate: (day) {
-              return controller.selectedDay.value != null &&
-                  isSameDay(controller.selectedDay.value!, day);
+              return calendarController.selectedDay.value != null &&
+                  isSameDay(calendarController.selectedDay.value!, day);
             },
             locale: 'ko-KR',
             daysOfWeekHeight: 30,
@@ -42,14 +42,16 @@ class CalendarScreen1 extends StatelessWidget {
                   color: Colors.lightBlueAccent,
                   shape: BoxShape.circle,
                 )),
-            eventLoader: (day) => controller.getEventsForDay(day),
-            onDaySelected: controller.onDaySelected,
-            onPageChanged: (focusDay) => controller.focusedDay.value = focusDay,
-            calendarFormat: controller.calendarFormat.value,
-            onFormatChanged: controller.onFormatChanged,
-          );
-        },
-      ),
+            eventLoader: (day) => calendarController.getEventsForDay(day),
+            onDaySelected: calendarController.onDaySelected,
+            onPageChanged: (focusDay) =>
+                calendarController.focusedDay.value = focusDay,
+            calendarFormat: calendarController.calendarFormat.value,
+            onFormatChanged: calendarController.onFormatChanged,
+          ),
+        );
+      },
     );
   }
 }
+
