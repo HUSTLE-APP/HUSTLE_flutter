@@ -8,6 +8,8 @@ import '../../../util/components/global_app_bar.dart';
 import '../../../util/components/global_modal.dart';
 import '../../../util/const/style/global_color.dart';
 import '../../../util/const/style/global_text_styles.dart';
+import '../../event/view/event_view.dart';
+import '../../match/view/match_view.dart';
 import '../controller/create_controller.dart';
 
 class CreateTournamentScreen extends StatelessWidget {
@@ -23,7 +25,8 @@ class CreateTournamentScreen extends StatelessWidget {
   // 텍스트 컨트롤러들
     return Scaffold(
       appBar: CommonAppBar.basic("대회 생성"),
-      body: Padding(
+    body: SingleChildScrollView( // SingleChildScrollView 추가
+    child: Padding(
         padding: EdgeInsets.all(16.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, // 왼쪽으로 정렬
@@ -141,7 +144,7 @@ class CreateTournamentScreen extends StatelessWidget {
                         subtitle: "대회에 신청하시겠습니까?",
                         onGrant: () async {
                           // 확인 버튼을 눌렀을 때의 작업
-                          Get.back(); // 모달 닫기
+                          Get.to(() => const MatchScreen());
                         },
                         grantText: "확인",
                       );
@@ -170,7 +173,8 @@ class CreateTournamentScreen extends StatelessWidget {
             // 기타 위젯들...
           ],
         ),
-      ),
+    ),
+    ),
     );
   }
 }

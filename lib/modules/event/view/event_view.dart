@@ -7,6 +7,7 @@ import 'package:match/modules/event/widget/event_widget.dart';
 import 'package:match/util/const/style/global_text_styles.dart';
 
 // import '../../../provider/api/util/global_api_field.dart';
+import '../../../util/components/global_app_bar.dart';
 import '../../../util/components/global_widget.dart';
 // import '../../../util/const/style/global_logger.dart';
 // import '../../../util/const/style/global_skeleton.dart';
@@ -20,25 +21,26 @@ class EventScreen extends GetView<EventController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CommonAppBar.basic("진행중인 경기"),
         body: SafeArea(
           child: Column(
             children: [
               ///*1.제목 header
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h)
-                    .copyWith(bottom: 17.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "진행중인 경기",
-                      style: AppTextStyles.T1Bold16,
-                      textAlign: TextAlign.center,
-                    ),
-                    // alarmButton()
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h)
+              //       .copyWith(bottom: 17.h),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Text(
+              //         "진행중인 경기",
+              //         style: AppTextStyles.T1Bold16,
+              //         textAlign: TextAlign.center,
+              //       ),
+              //       // alarmButton()
+              //     ],
+              //   ),
+              // ),
 
               ///*2. event body
               ///carousel slider로 구성

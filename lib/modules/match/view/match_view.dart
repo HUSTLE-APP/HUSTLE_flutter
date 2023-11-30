@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../create/view/create_view.dart';
+import '../../event/view/event_view.dart';
 import '../controller/match_controller.dart';
 import '../widget/custom_component.dart';
 import '../widget/filter.dart';
@@ -25,7 +27,7 @@ class MatchScreen extends GetView<MatchController> {
             GestureDetector(
               onTap: () {
                 // 경기 생성 뷰로 이동하는 로직을 구현합니다.
-                // 예: Get.to(() => CreateMatchView());
+                Get.to(() => CreateTournamentScreen());
               },
               child: Container(
                 width: 36.w,
@@ -33,6 +35,22 @@ class MatchScreen extends GetView<MatchController> {
                 padding: EdgeInsets.all(8.h), // SVG 아이콘과 컨테이너의 패딩
                 child: SvgPicture.asset(
                   'asset/image/icon/plus.svg', // SVG 파일 경로
+                  color: Colors.black, // SVG 아이콘 색상
+                ),
+              ),
+            ),
+            SizedBox(width: 8.w), // 버튼과 화면 끝 사이의 공간
+            GestureDetector(
+              onTap: () {
+                // 경기 생성 뷰로 이동하는 로직을 구현합니다.
+                Get.to(() => const EventScreen());
+              },
+              child: Container(
+                width: 36.w,
+                height: 24.h,
+                padding: EdgeInsets.all(8.h), // SVG 아이콘과 컨테이너의 패딩
+                child: SvgPicture.asset(
+                  'asset/image/icon/basketball.svg', // SVG 파일 경로
                   color: Colors.black, // SVG 아이콘 색상
                 ),
               ),
