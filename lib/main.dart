@@ -12,6 +12,7 @@ import 'package:match/provider/routes/routes.dart';
 
 import 'modules/create/binding/create_binding.dart';
 import 'modules/event/binding/event_binding.dart';
+import 'modules/home/binding/home_binding.dart';
 import 'modules/match/binding/match_binding.dart';
 
 import 'modules/friendlyMatch/main_match.dart';
@@ -55,8 +56,8 @@ class MyApp extends StatelessWidget {
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate
             ],
-            initialRoute: "/match",
-            initialBinding: MatchBinding(),
+            initialRoute: "/splash",
+            initialBinding: SplashBinding(),
             smartManagement: SmartManagement.full,
             navigatorKey: Get.key,
           );

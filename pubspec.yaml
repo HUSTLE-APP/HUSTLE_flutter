@@ -56,6 +56,7 @@ flutter:
     - asset/image/icon/basketball.svg
     - asset/image/logo/iv_hustle_logo.png
     - asset/image/logo/iv_hustleHome_logo.png
+    -
 
   fonts:
     - family: AppleSDGothicNeo
