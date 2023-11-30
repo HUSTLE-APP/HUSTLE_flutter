@@ -148,8 +148,7 @@ class Pages {
       curve: Curves.easeIn,
       popGesture: false,
     ),
-
-
+    GetPage(
         title: "교류전메인",
         name: Routes.main_match,
         page: () => MainMatchScreen(),
