@@ -52,6 +52,7 @@ abstract class _Paths {
 
   // 상세보기 화면
   static const view_detail = "/detail";
+}
 
 
 abstract class Routes {
