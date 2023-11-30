@@ -18,6 +18,12 @@ class AppTextStyles {
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.1);
+  static var L1Medium13 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w500,
+      letterSpacing: -0.1);
   static var heading2Bold18 = TextStyle(
       color: _defaultTextColor,
       fontFamily: _defaultFontFamily,
@@ -69,4 +75,54 @@ class AppTextStyles {
       fontSize: 12.sp,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.08);
+  static var T1Bold10 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 10.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
+  static var T1Bold12 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
+  static var   T1Bold13 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
+  static var T1Bold14 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
+  static var T1Bold16 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
+  static var S1SemiBold13 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.08);
+  static var S1SemiBold14 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.08);
+  static var T1Bold15 = TextStyle(
+      color: _defaultTextColor,
+      fontFamily: _defaultFontFamily,
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.08);
 }
+
+

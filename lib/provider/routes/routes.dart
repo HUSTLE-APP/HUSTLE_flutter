@@ -1,6 +1,12 @@
 abstract class _Paths {
   _Paths._();
 
+  //이벤트 상세
+  static const event_detail = '/eventDetail';
+
+  /// 경기 화면
+  static const match = "/match";
+
   /// 스플래시 화면
   static const splash = "/splash";
 
@@ -31,6 +37,10 @@ abstract class _Paths {
   /// 마이페이지 화면
   static const mypage = "/mypage";
 
+
+  /// 대회생성 화면
+  static const create = "/create";
+
   // 교류전 메인화면
   static const main_match = "/main_match";
 
@@ -42,10 +52,12 @@ abstract class _Paths {
 
   // 상세보기 화면
   static const view_detail = "/detail";
-}
+
 
 abstract class Routes {
   Routes._();
+  /// 경기 화면
+  static const match = _Paths.match;
 
   /// 스플래시 화면
   static const splash = _Paths.splash;
@@ -74,8 +86,15 @@ abstract class Routes {
   /// 이벤트 화면
   static const event = _Paths.event;
 
+  /// 이벤트 상세 화면
+  static const event_detail = _Paths.event_detail;
+
   /// 마이페이지 화면
   static const mypage = _Paths.mypage;
+
+
+  /// 대회생성 화면
+  static const create = _Paths.create;
 
   // 교류전 메인화면
   static const main_match = _Paths.main_match;
@@ -88,4 +107,5 @@ abstract class Routes {
 
   // 상세보기 화면
   static const view_detail = _Paths.view_detail;
+
 }
