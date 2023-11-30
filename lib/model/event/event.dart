@@ -20,8 +20,8 @@ class Event {
 final Event hardcodedEvent = Event(
   eventId: '1',
   thumbnail: 'https://example.com/image.jpg', // 적절한 이미지 URL 사용
-  title: '이벤트 제목',
-  smallTitle: '작은 제목',
+  title: '가톨릭대학교 총장배',
+  smallTitle: '가톨릭대학교 체육관',
   startDate: '2023-01-01',
   endDate: '2023-01-31',
 );

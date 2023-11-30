@@ -31,7 +31,7 @@ class EventScreen extends GetView<EventController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "이벤트",
+                      "진행중인 경기",
                       style: AppTextStyles.T1Bold16,
                       textAlign: TextAlign.center,
                     ),

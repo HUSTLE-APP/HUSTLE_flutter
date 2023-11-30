@@ -6,6 +6,7 @@ import 'package:match/util/components/global_app_bar.dart';
 import 'package:match/util/const/style/global_color.dart';
 import 'package:match/util/const/style/global_text_styles.dart';
 
+import '../../../util/components/global_modal.dart';
 import '../../home/widget/home_widget.dart';
 
 ///<h2>이벤트 상세 화면</h2>
@@ -15,63 +16,129 @@ class EventDetailScreen extends GetView<EventDetailController> {
 
   @override
   Widget build(BuildContext context) {
-
-    final eventInfo = {
-      "smallTitle": "하드코딩된 작은 제목",
-      "title": "하드코딩된 이벤트 제목",
-      "startDate": "2023-01-01",
-      "endDate": "2023-01-31",
-    };
-    final eventContents = [
-      {"contentsType": "IMG", "contents": "https://example.com/image.jpg"},
-      {"contentsType": "TEXT", "contents": "하드코딩된 이벤트 내용입니다."},
-      // 다른 내용들을 여기에 추가합니다.
-    ];
+    final controller = Get.find<EventDetailController>();
 
     return Scaffold(
-        appBar: CommonAppBar.basic("매치 이벤트"),
+        appBar: CommonAppBar.basic("모집중인 경기"),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Obx(
                 () => ListView(
                   physics: const ScrollPhysics(),
                   children: [
-                    SizedBox(height: 33.h),
-                    Text(
-                      eventInfo["smallTitle"] ?? "",
-                      style: AppTextStyles.L1Medium13,
-                    ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      eventInfo["title"] ?? "",
-                      style: AppTextStyles.T1Bold15,
-                    ),
-                    SizedBox(height: 6.h),
-                    Text(
-                      "${eventInfo["startDate"]} ~ ${eventInfo["endDate"]}",
-                      style: AppTextStyles.S1SemiBold13.copyWith(
-                        color: AppColors.grey3,
-                      ),
-                    ),
-                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24.h),
-                      child: const Divider(
-                        thickness: 1,
-                        color: AppColors.divider1,
-                      ),
-                    ),
-                    ...eventContents.map((content) {
+                    ...controller.eventContents.value.map((content) {
                       return content["contentsType"] == "IMG"
-                          ? Image.network(
+                          ? Image.asset( // Image.network 대신 Image.asset 사용
                         content["contents"] as String,
                         width: double.infinity,
+                        fit: BoxFit.cover, // 이미지를 적절히 조절하려면 BoxFit 사용
                       )
                           : Text(
                         content["contents"] as String,
                         style: AppTextStyles.S1SemiBold14,
                       );
                     }).toList(),
-
+                    SizedBox(height: 16.h),
+                    Text(
+                      controller.eventInfo.value["title"] ?? "",
+                      style: AppTextStyles.L1Medium13,
+                    ),
+                    Text(
+                      "${controller.eventInfo.value["title1"]}",
+                      style: AppTextStyles.S1SemiBold13.copyWith(
+                        color: AppColors.grey3,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      controller.eventInfo.value["date"] ?? "",
+                      style: AppTextStyles.L1Medium13,
+                    ),
+                    Text(
+                      "${controller.eventInfo.value["dateStart"]} ~ ${controller.eventInfo.value["dateEnd"]}",
+                      style: AppTextStyles.S1SemiBold13.copyWith(
+                        color: AppColors.grey3,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      controller.eventInfo.value["location"] ?? "",
+                      style: AppTextStyles.L1Medium13,
+                    ),
+                    Text(
+                      "${controller.eventInfo.value["location1"]}",
+                      style: AppTextStyles.S1SemiBold13.copyWith(
+                        color: AppColors.grey3,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      controller.eventInfo.value["name"] ?? "",
+                      style: AppTextStyles.L1Medium13,
+                    ),
+                    Text(
+                      "${controller.eventInfo.value["name1"]}",
+                      style: AppTextStyles.S1SemiBold13.copyWith(
+                        color: AppColors.grey3,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    Text(
+                      controller.eventInfo.value["phone"] ?? "",
+                      style: AppTextStyles.L1Medium13,
+                    ),
+                    Text(
+                      "${controller.eventInfo.value["phone1"]}",
+                      style: AppTextStyles.S1SemiBold13.copyWith(
+                        color: AppColors.grey3,
+                      ),
+                    ),
+                    SizedBox(height: 20.h),
+                    Text(
+                      "${controller.eventInfo.value["startDate"]} ~ ${controller.eventInfo.value["endDate"]}",
+                      style: AppTextStyles.S1SemiBold14
+                    ),
+                    SizedBox(height: 12.h),
+                    Divider(
+                      thickness: 1,
+                      color: AppColors.divider1,
+                    ),
+                     Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24.h),
+                       child: ElevatedButton(
+                         onPressed: () {
+                           // 여기에 버튼을 눌렀을 때의 동작을 정의합니다.
+                           showDialog(
+                             context: context,
+                             builder: (BuildContext context) {
+                               return CommonDialog(
+                                 title: "신청 완료",
+                                 subtitle: "신청이 완료되었습니다.",
+                                 onGrant: () async {
+                                   Get.back(); // 다이얼로그 닫기
+                                   // 필요한 추가 작업을 여기에 구현합니다.
+                                 },
+                                 grantText: "확인",
+                               );
+                             },
+                           );
+                         },
+                         style: ElevatedButton.styleFrom(
+                           primary: Colors.blue, // 버튼 색상
+                           padding: EdgeInsets.symmetric(vertical: 12.h),
+                           shape: RoundedRectangleBorder(
+                             borderRadius: BorderRadius.circular(20),
+                           ),
+                         ),
+                         child: Text(
+                           "신청하기",
+                           style: TextStyle(
+                             fontSize: 16.sp, // 텍스트 크기
+                             color: Colors.white, // 텍스트 색상
+                           ),
+                         ),
+                    ),
+                     ),
                 // Container(
                 //   width: double.infinity,
                 //   decoration: BoxDecoration(

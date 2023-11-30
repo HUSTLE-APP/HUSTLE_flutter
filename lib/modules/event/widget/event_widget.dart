@@ -26,14 +26,26 @@ class EventWidget extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.r),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(event.thumbnail),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30.r),
+              bottomRight: Radius.circular(30.r),
             ),
-          ),
+            border: Border.all(
+              color: Colors.black, // 테두리 색상 지정
+              width: 1.0, // 테두리 두께 지정
+            ),
+            ),
           child: Stack(
             children: [
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: Image.asset(
+                  'asset/image/iv_test_contest.jpeg',
+                  fit: BoxFit.contain,
+                ),
+              ),
               Positioned(
                 left: 18.w,
                 bottom: 22.h,

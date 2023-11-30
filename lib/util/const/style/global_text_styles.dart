@@ -98,7 +98,7 @@ class AppTextStyles {
       fontFamily: _defaultFontFamily,
       fontSize: 16.sp,
       fontWeight: FontWeight.w700,
-      letterSpacing: -0.08)
+      letterSpacing: -0.08);
   static var S1SemiBold13 = TextStyle(
       color: _defaultTextColor,
       fontFamily: _defaultFontFamily,
