@@ -29,13 +29,15 @@ class ViewDetails extends StatelessWidget {
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16.0),
-            buildDetailRow('일시',
-                event.date != null ? DateFormat('yyyy-MM-dd').format(
-                    event.date!) : '날짜 미정'),
+            buildDetailRow(
+                '일시',
+                event.date != null
+                    ? DateFormat('yyyy-MM-dd').format(event.date!)
+                    : '날짜 미정'),
             buildDetailRow('장소', event.place ?? '장소 미정'),
             buildDetailRow('동아리명', event.clubName ?? '동아리 미지정'),
-            buildDetailRow('연락처', event.phone ?? '연락처 미정'),
-            SizedBox(height: 16.0),
+            buildDetailRow('문의', event.phone ?? '연락처 미정'),
+            Spacer(),
             ElevatedButton(
               onPressed: () {
                 Get.to(() => ApplyFormScreen());
